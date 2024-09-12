@@ -22,14 +22,14 @@ function App() {
 
         <fog attach="fog" args={["#f5f3ee", 10, 50]} />
 
-        <Float
+        {/* <Float
           speed={3} // Animation speed, defaults to 1
           rotationIntensity={1} // XYZ rotation intensity, defaults to 1
           floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
           floatingRange={[-0.2, 0.2]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
-        >
+        > */}
           <Cigar />
-        </Float>
+        {/* </Float> */}
 
 <LogoGroup></LogoGroup>
       </View>

@@ -111,17 +111,17 @@ export function Cigar(props) {
         start: "top bottom",
         end: "bottom top",
         // markers:true,
-        scrub: 1.5,
+        scrub: 2,
       },
     });
     scrollTl
-    // Rotate can group
-    // .to(groupref.current.rotation, { y: Math.PI * 2 })
+      // Rotate can group
+      // .to(groupref.current.rotation, { y: Math.PI * 2 })
 
-    // Can 1 - black cherry
-    // .to(ref.current.position, { x: -0.2, y: -0.7, z: -2 }, 0)
-    .to(ref.current.rotation, { z: Math.PI *2.5 }, 0)
-    .to(ref.current.position, { y: -2.5 }, 0.5)
+      // Can 1 - black cherry
+      // .to(ref.current.position, { x: -0.2, y: -0.7, z: -2 }, 0)
+      .to(ref.current.rotation, { z: Math.PI * 2.9 }, 0)
+      .to(ref.current.position, { y: -2.5 }, 0.5);
     // .to(ref.current.position, { y: -2.5}, 0)
   });
 
