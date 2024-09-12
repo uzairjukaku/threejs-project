@@ -4,7 +4,7 @@
 
 canvas {
   z-index: 0 !important;
-  /* background-color: #04ff04; */
+background-image: url(../public/BG.jpg);
 }
 
 .section3 {

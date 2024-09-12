@@ -14,11 +14,11 @@ export function Cigar(props) {
   const ref = useRef();
   const groupref = useRef();
 
-  const { rotationz } = useControls({
-    // rotationy: { value: 0, min: -Math.PI * 2, max: Math.PI * 2, step: 0.01 },
-    // rotationx: { value: 0, min: -Math.PI * 2, max: Math.PI * 2, step: 0.01 },
-    rotationz: { value: 0, min: -Math.PI * 2, max: Math.PI * 2, step: 0.01 },
-  });
+  // const { rotationz } = useControls({
+  //   // rotationy: { value: 0, min: -Math.PI * 2, max: Math.PI * 2, step: 0.01 },
+  //   // rotationx: { value: 0, min: -Math.PI * 2, max: Math.PI * 2, step: 0.01 },
+  //   rotationz: { value: 0, min: -Math.PI * 2, max: Math.PI * 2, step: 0.01 },
+  // });
 
   // useLayoutEffect(() => {
   //   // ref.current.rotation.y = Math.PI;
