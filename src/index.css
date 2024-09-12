@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-
-canvas{
-
+canvas {
   z-index: 0 !important;
+  /* background-color: #04ff04; */
 }
 
-.section3{
-
-
+.section3 {
   z-index: 1000 !important;
 }
+
+
+

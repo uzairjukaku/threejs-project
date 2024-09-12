@@ -9,16 +9,16 @@ import { useGSAP } from "@gsap/react";
 // Register ScrollTrigger plugin
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export function Cigar(props) {
+export function Cigar2(props) {
   const { nodes, materials } = useGLTF("/models/untitled.glb");
   const ref = useRef();
   const groupref = useRef();
 
-  const { rotationz } = useControls({
-    // rotationy: { value: 0, min: -Math.PI * 2, max: Math.PI * 2, step: 0.01 },
-    // rotationx: { value: 0, min: -Math.PI * 2, max: Math.PI * 2, step: 0.01 },
-    rotationz: { value: 0, min: -Math.PI * 2, max: Math.PI * 2, step: 0.01 },
-  });
+  // const { rotationz } = useControls({
+  //   // rotationy: { value: 0, min: -Math.PI * 2, max: Math.PI * 2, step: 0.01 },
+  //   // rotationx: { value: 0, min: -Math.PI * 2, max: Math.PI * 2, step: 0.01 },
+  //   rotationz: { value: 0, min: -Math.PI * 2, max: Math.PI * 2, step: 0.01 },
+  // });
 
   // useLayoutEffect(() => {
   //   // ref.current.rotation.y = Math.PI;
@@ -88,42 +88,42 @@ export function Cigar(props) {
   //   );
   // }, [camera]);
 
-  useGSAP(() => {
-    if (!ref.current || !groupref.current) return;
+  // useGSAP(() => {
+  //   if (!ref.current || !groupref.current) return;
 
-    const introTl = gsap.timeline({
-      defaults: {
-        duration: 3,
-        ease: "back.out(1.4)",
-      },
-    });
+  //   const introTl = gsap.timeline({
+  //     defaults: {
+  //       duration: 3,
+  //       ease: "back.out(1.4)",
+  //     },
+  //   });
 
-    introTl
-      .from(groupref.current.position, { y: -5, x: 1 }, 0)
-      .from(groupref.current.rotation, { z: 3 }, 0);
+  //   introTl
+  //     .from(groupref.current.position, { y: -5, x: 1 }, 0)
+  //     .from(groupref.current.rotation, { z: 3 }, 0);
 
-    const scrollTl = gsap.timeline({
-      defaults: {
-        duration: 2,
-      },
-      scrollTrigger: {
-        trigger: ".section2",
-        start: "top bottom",
-        end: "bottom top",
-        // markers:true,
-        scrub: 1.5,
-      },
-    });
-    scrollTl
-    // Rotate can group
-    // .to(groupref.current.rotation, { y: Math.PI * 2 })
+  //   const scrollTl = gsap.timeline({
+  //     defaults: {
+  //       duration: 2,
+  //     },
+  //     scrollTrigger: {
+  //       trigger: ".section2",
+  //       start: "top bottom",
+  //       end: "bottom top",
+  //       markers:true,
+  //       scrub: 1.5,
+  //     },
+  //   });
+  //   scrollTl
+  //   // Rotate can group
+  //   // .to(groupref.current.rotation, { y: Math.PI * 2 })
 
-    // Can 1 - black cherry
-    // .to(ref.current.position, { x: -0.2, y: -0.7, z: -2 }, 0)
-    .to(ref.current.rotation, { z: Math.PI *2.5 }, 0)
-    .to(ref.current.position, { y: -2.5 }, 0.5)
-    // .to(ref.current.position, { y: -2.5}, 0)
-  });
+  //   // Can 1 - black cherry
+  //   // .to(ref.current.position, { x: -0.2, y: -0.7, z: -2 }, 0)
+  //   .to(ref.current.rotation, { z: Math.PI *2.5 }, 0)
+  //   .to(ref.current.position, { y: -2.5 }, 0.5)
+  //   // .to(ref.current.position, { y: -2.5}, 0)
+  // });
 
   return (
     <group ref={groupref}>
