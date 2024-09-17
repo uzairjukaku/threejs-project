@@ -2,14 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+
+body{
+
+  background-image: url(../public/BG.jpg);
+  background-repeat: repeat;
+  background-size: contain;
+}
 canvas {
   z-index: 0 !important;
-background-image: url(../public/BG.jpg);
+
 }
 
 .section3 {
   z-index: 1000 !important;
 }
 
-
-
+.canvasContainer {
+  /* position: fixed !important; */
+}

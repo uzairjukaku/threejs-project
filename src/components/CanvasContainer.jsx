@@ -4,7 +4,8 @@ import { Cigar } from "./Cigar";
 import { Environment, Float, OrbitControls, View } from "@react-three/drei";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Cylender from "./Cylender";
+
+import LogoGroup from "./LogoGroup";
 
 gsap.registerPlugin(ScrollTrigger);
 function CanvasContainer() {
@@ -16,22 +17,18 @@ function CanvasContainer() {
       camera={{
         fov: 30,
       }}
-      className="z-10"
     >
-    
-      {/* <Float
-        speed={1} // Animation speed, defaults to 1
-        rotationIntensity={1} // XYZ rotation intensity, defaults to 1
-        floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
-        floatingRange={[-1, .5]}
-      >
-      </Float> */}
+      <Environment preset="apartment"></Environment>
+      {/* <ambientLight></ambientLight> */}
+
+      <fog attach="fog" args={["#f5f3ee", 10, 50]} />
 
       <Suspense fallback={null}>
-        <View.Port />
+        <Cigar />
+        {/* </Float> */}
+
+        <LogoGroup></LogoGroup>
       </Suspense>
-      {/* <Cigar /> */}
-      {/* <Cylender></Cylender> */}
     </Canvas>
   );
 }

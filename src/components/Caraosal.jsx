@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
 
-import { WavyCircles } from "./WavyCircles";
+
 // import { ArrowButton } from "./ArrowIcon";
 import { Center, Environment, View } from "@react-three/drei";
 import { Cigar } from "./Cigar.jsx";
 
 import gsap from "gsap";
-import { Cigar2 } from "./Cigar2.jsx";
+
 const SPINS_ON_CHANGE = 8;
 function Caraosal() {
   const [currentFlavorIndex, setCurrentFlavorIndex] = useState(0);
@@ -46,9 +46,7 @@ function Caraosal() {
 
   function clickp(){
 
-    console.log('====================================');
-    console.log('click');
-    console.log('====================================');
+  
   }
   return (
     // <section className="carousel relative grid h-screen grid-rows-[auto,4fr,auto] justify-center overflow-hidden bg-white py-12 text-white">
@@ -67,7 +65,7 @@ function Caraosal() {
 
             <group  ref={sodaCanRef} scale={.6}>
 
-            <Cigar2 />
+            {/* <Cigar2 /> */}
             </group>
           </Center>
 

@@ -1,44 +1,68 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import CanvasContainer from "./components/CanvasContainer";
-import { Cigar } from "./components/Cigar";
-import { Environment, Float, View } from "@react-three/drei";
-import Caraosal from "./components/Caraosal";
-import Cylender from "./components/Cylender";
-import LogoGroup from "./components/LogoGroup";
 
-function App() {
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import Section2 from "./components/Section2";
+import Section4 from "./components/Section4";
+import Footer from "./components/Footer";
+
+gsap.registerPlugin(ScrollTrigger);
+
+// function App() {
+
+//   return (
+//     <div className=" ">
+//       <div className="canvas-container canvasContainer h-screen w-full  left-0 top-0">
+//
+//       </div>
+
+//       <section className="h-screen"></section>
+//       <section className="section2 bg-red-400 h-screen"></section>
+
+//       <section className="section3 bg-blue-200 h-screen"></section>
+//       <section className="section4 bg-blue-200 h-screen"></section>
+//       <section className="section5 bg-blue-200 h-screen"></section>
+//       <section className="section6 bg-blue-200 h-screen"></section>
+//     </div>
+//   );
+// }
+
+const App = () => {
+  useGSAP(() => {
+    gsap.to(".section1", {
+      scrollTrigger: {
+        trigger: ".section1",
+        start: "top 0%",
+        // endTrigger: ".section3",
+        end: "bottom 0%",
+        pin: ".section1",
+        // markers: true,
+        pinSpacing: false,
+      },
+    });
+  }, []);
+
   return (
-    <div className="relative ">
-      <div className=" h-screen w-full fixed left-0 top-0 ">
-        <CanvasContainer />
-      </div>
-
-      <View className="h-screen w-full fixed top-0 left-0 z-0">
-        <Environment preset="apartment"></Environment>
-        {/* <ambientLight></ambientLight> */}
-
-        <fog attach="fog" args={["#f5f3ee", 10, 50]} />
-
-        {/* <Float
-          speed={3} // Animation speed, defaults to 1
-          rotationIntensity={1} // XYZ rotation intensity, defaults to 1
-          floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
-          floatingRange={[-0.2, 0.2]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
-        > */}
-          <Cigar />
-        {/* </Float> */}
-
-<LogoGroup></LogoGroup>
-      </View>
-
-      <section className="h-screen"></section>
-      <section className="section2 h-screen"></section>
-      {/* <Caraosal className="section3 bg-red-400 !z-[100] h-screen"></Caraosal> */}
+    <div>
+      <section className="section1" style={{ height: "100vh" }}>
+        <CanvasContainer></CanvasContainer>
+      </section>
+      <section className="section2" style={{ height: "100vh" }}></section>
+      <section className="section3" style={{}}>
+        <Section2 type={'FEATURED'}></Section2>
+      </section>
+      <section className="section4">
+        <Section2 type={'BEST SELLING'}></Section2>
+      </section>
+      <section className="section5">
+        <Section4></Section4>{" "}
+      </section>
+      <section className="section6">
+        <Footer></Footer>{" "}
+      </section>
     </div>
   );
-}
-
+};
 export default App;
