@@ -11,6 +11,7 @@ function LogoGroup() {
   const logo3 = useRef();
   const logo4 = useRef();
   const logo5 = useRef();
+  const grouplogo = useRef();
 
   useGSAP(() => {
     // if (!logo1.current || !logo2.current || !logo3.current || !logo4.current)
@@ -24,27 +25,38 @@ function LogoGroup() {
     introTl.set(logo4.current.position, { x: 0.5, y: 2, z: 0.3 });
     introTl.set(logo5.current.position, { x: 0, y: 2, z: 0.4 });
 
-    const scrollTl = gsap.timeline({
+    const grouptrigger = gsap.timeline({
       defaults: {
-        duration: 2,
+        duration: 3,
       },
       scrollTrigger: {
         trigger: ".section2",
-        start: "top center",
-        end: "bottom bottom",
+        start: "top bottom",
+        end: "bottom top",
+
+        scrub: 1.5,
+      },
+    });
+    const scrollTl = gsap.timeline({
+      defaults: {
+        duration: 3,
+      },
+      scrollTrigger: {
+        trigger: ".section2",
+        start: "top bottom",
+        end: "bottom top",
 
         scrub: 1.5,
       },
     });
     const scrollT2 = gsap.timeline({
       defaults: {
-        duration: 2,
+        duration: 3,
       },
       scrollTrigger: {
         trigger: ".section2",
-        start: "top center",
-        end: "bottom bottom",
-
+        start: "top bottom",
+        end: "bottom top",
         scrub: 1.5,
       },
     });
@@ -54,20 +66,20 @@ function LogoGroup() {
       },
       scrollTrigger: {
         trigger: ".section2",
-        start: "top center",
-        end: "bottom bottom",
+        start: "top bottom",
+        end: "bottom top",
 
         scrub: 1.5,
       },
     });
     const scrollT4 = gsap.timeline({
       defaults: {
-        duration: 2,
+        duration: 4,
       },
       scrollTrigger: {
         trigger: ".section2",
-        start: "top center",
-        end: "bottom bottom",
+        start: "top bottom",
+        end: "bottom top",
 
         scrub: 1.5,
       },
@@ -78,8 +90,8 @@ function LogoGroup() {
       },
       scrollTrigger: {
         trigger: ".section2",
-        start: "top center",
-        end: "bottom bottom",
+        start: "top bottom",
+        end: "bottom top",
 
         scrub: 1.5,
       },
@@ -126,6 +138,7 @@ function LogoGroup() {
         y: 0.2,
       }
     );
+
     scrollT5.fromTo(
       logo5.current.position,
       {
@@ -137,10 +150,28 @@ function LogoGroup() {
         y: 0.7,
       }
     );
+    grouptrigger.fromTo(
+      grouplogo.current.position,
+      {
+        x: 0,
+        y: 0,
+      },
+      {
+        x: 0,
+        y: -.5,
+      },2
+    ).to(
+      grouplogo.current.position,
+      {
+        x: 0,
+        y: -2.3,
+      },
+
+    )
   });
 
   return (
-    <group>
+    <group ref={grouplogo}>
       <group ref={logo1}>
         <Cylender logo={"./logo6.png"}></Cylender>
       </group>

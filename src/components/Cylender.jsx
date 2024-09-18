@@ -3,27 +3,23 @@ import { useFrame } from "@react-three/fiber";
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import * as THREE from "three";
-function Cylender({logo}) {
+function Cylender({ logo }) {
   const texture = useTexture(logo);
   texture.needsUpdate = true;
 
   const ref = useRef();
 
   return (
-   
-    <Float
-    speed={1} // Animation speed, defaults to 1
-    rotationIntensity={4} // XYZ rotation intensity, defaults to 1
-    floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
-    floatingRange={[-0.05, 0.05]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
-  >
-   <mesh>
+    <mesh>
       <planeGeometry args={[1, 1]} />
       {/* You can add any material, here we use a basic material */}
-      <meshBasicMaterial depthWrite={false} map={texture} transparent side={THREE.DoubleSide} />
+      <meshBasicMaterial
+        depthWrite={false}
+        map={texture}
+        transparent
+        side={THREE.DoubleSide}
+      />
     </mesh>
-
-    </Float>
   );
 }
 

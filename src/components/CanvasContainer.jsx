@@ -1,11 +1,18 @@
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense } from "react";
 import { Cigar } from "./Cigar";
-import { Environment, Float, OrbitControls, View } from "@react-three/drei";
+import {
+  Environment,
+  Float,
+  Html,
+  OrbitControls,
+  View,
+} from "@react-three/drei";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import LogoGroup from "./LogoGroup";
+import Circular from "./Circular";
 
 gsap.registerPlugin(ScrollTrigger);
 function CanvasContainer() {
@@ -28,6 +35,8 @@ function CanvasContainer() {
         {/* </Float> */}
 
         <LogoGroup></LogoGroup>
+
+        <Circular></Circular>
       </Suspense>
     </Canvas>
   );

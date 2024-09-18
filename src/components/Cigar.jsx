@@ -120,8 +120,16 @@ export function Cigar(props) {
 
       // Can 1 - black cherry
       // .to(ref.current.position, { x: -0.2, y: -0.7, z: -2 }, 0)
-      .to(ref.current.rotation, { z: Math.PI * 2.9 }, 0)
-      .to(ref.current.position, { y: -2.5 }, 0.5);
+      .to(ref.current.rotation, { z: Math.PI * 2.6 }, 0)
+      .to(ref.current.position, { y: -1.5 }, 0)
+      // .to(ref.current.position, { y: -1.5 }, 0)
+      // .to(
+      //   ref.current,{
+      //     x:-10,
+      //     y:-10,
+      //     z:-20
+      //   }
+      // )
     // .to(ref.current.position, { y: -2.5}, 0)
   });
 

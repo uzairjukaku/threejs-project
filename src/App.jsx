@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import Section2 from "./components/Section2";
 import Section4 from "./components/Section4";
 import Footer from "./components/Footer";
+import Circular from "./components/Circular";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,7 +36,7 @@ const App = () => {
       scrollTrigger: {
         trigger: ".section1",
         start: "top 0%",
-        // endTrigger: ".section3",
+        endTrigger: ".section5",
         end: "bottom 0%",
         pin: ".section1",
         // markers: true,
@@ -49,15 +50,26 @@ const App = () => {
       <section className="section1" style={{ height: "100vh" }}>
         <CanvasContainer></CanvasContainer>
       </section>
-      <section className="section2" style={{ height: "100vh" }}></section>
-      <section className="section3" style={{}}>
-        <Section2 type={'FEATURED'}></Section2>
+      <section className="section2" style={{ height: "100vh"}}></section>
+      <section className="section3  " style={{}}>
+        {/* <Section2 type={'FEATURED'}></Section2> */}
+
+        {/* <Circular/> */}
       </section>
       <section className="section4">
-        <Section2 type={'BEST SELLING'}></Section2>
+      
       </section>
-      <section className="section5">
-        <Section4></Section4>{" "}
+      <section className="section5"  style={{ height: "100vh" }}>
+     
+      </section>
+      <section className="section6"  style={{ height: "100vh" }}>
+    
+      </section>
+      <section className="section7">
+      <Section2 type={'BEST SELLING'}></Section2>
+      </section>
+      <section className="section7">
+        <Section4></Section4>
       </section>
       <section className="section6">
         <Footer></Footer>{" "}
