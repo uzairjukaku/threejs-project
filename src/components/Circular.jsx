@@ -1,13 +1,15 @@
-import React, { useRef } from "react";
+import React, { useRef, useLayoutEffect, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 import { Html } from "@react-three/drei";
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+gsap.registerPlugin(ScrollTrigger);
+
 function Circular() {
   const circulargroup = useRef();
+  const circularRef = useRef(null); // Reference for the `.circular` div
 
-  useGSAP(() => {
+  useEffect(() => {
     const grouptrigger = gsap.timeline({
       defaults: {
         duration: 3,
@@ -35,21 +37,19 @@ function Circular() {
         2
       )
       .fromTo(
-        ".circular",
-        { rotation: 90 }, // start rotation at 0 degrees
-        { rotation: -90 } // animate to 360 degrees
+        '.circular', // Reference the DOM element instead of using a selector
+        { rotation: 90 },
+        { rotation: -90 }
       );
-  }, [circulargroup]);
+  });
 
   return (
     <group ref={circulargroup}>
-      <Html
-        className="hi"
-        position={[-2.69, 0, 0]}
-        occlude
-        zIndexRange={[-100, 0]}
-      >
-        <div className="circular z-0 h-[200vh] w-screen  overflow-visible rounded-full relative bg-white">
+      <Html position={[-2.69, 0, 0]} occlude zIndexRange={[-100, 0]}>
+        <div
+          className="circular z-0 h-[200vh] w-screen overflow-visible rounded-full relative bg-white"
+          ref={circularRef} // Attach the ref to this element
+        >
           <div className="box bg-red-400 w-1/4 h-[450px]" id="box1">
             Box 1
           </div>
