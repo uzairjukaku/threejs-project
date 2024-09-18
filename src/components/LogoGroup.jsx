@@ -151,27 +151,14 @@ function LogoGroup() {
       }
     );
     grouptrigger.fromTo(
-      grouplogo.current.position,
-      {
-        x: 0,
-        y: 0,
-      },
-      {
-        x: 0,
-        y: -.5,
-      },2
-    ).to(
-      grouplogo.current.position,
-      {
-        x: 0,
-        y: -2.3,
-      },
-
+      grouplogo.current,
+      { visible: true },  // Fully visible
+      { visible: false}  
     )
   });
 
   return (
-    <group ref={grouplogo}>
+    <group  ref={grouplogo}>
       <group ref={logo1}>
         <Cylender logo={"./logo6.png"}></Cylender>
       </group>
