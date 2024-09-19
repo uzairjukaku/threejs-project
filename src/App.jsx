@@ -8,6 +8,7 @@ import Section2 from "./components/Section2";
 import Section4 from "./components/Section4";
 import Footer from "./components/Footer";
 import Circular from "./components/Circular";
+import Header from "./components/Header";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,7 +48,11 @@ const App = () => {
 
   return (
     <div>
-      <section className="section1" style={{ height: "100vh" }}>
+
+      <Header></Header>
+      <section className="section1 relative" style={{ height: "100vh" }}>
+      
+      <img src="/Logo.png" className="!-z-[1000] absolute top-1/2 left-1/2 object-contain h-96 -translate-x-1/2 -translate-y-1/2 " alt="" srcset="" />
         <CanvasContainer></CanvasContainer>
       </section>
       <section className="section2" style={{ height: "100vh"}}></section>

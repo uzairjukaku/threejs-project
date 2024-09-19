@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Cylender from "./Cylender";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -12,6 +12,7 @@ function LogoGroup() {
   const logo4 = useRef();
   const logo5 = useRef();
   const grouplogo = useRef();
+  const [isVisible, setIsVisible] = useState(true);
 
   useGSAP(() => {
     // if (!logo1.current || !logo2.current || !logo3.current || !logo4.current)
@@ -26,15 +27,24 @@ function LogoGroup() {
     introTl.set(logo5.current.position, { x: 0, y: 2, z: 0.4 });
 
     const grouptrigger = gsap.timeline({
-      defaults: {
-        duration: 3,
-      },
       scrollTrigger: {
         trigger: ".section2",
-        start: "top bottom",
-        end: "bottom top",
-
+        start: "top 0%",
+        end: "bottom center",
+        // markers: true,
         scrub: 1.5,
+        // onLeave: () => {
+        //   console.log("Left section");
+        //   setIsVisible(false);
+        // },
+        // onEnterBack: () => {
+        //   console.log("Entered section back");
+        //   setIsVisible(true);
+        // },
+        // onLeaveBack: () => {
+        //   console.log("Left section back");
+        //   setIsVisible(false);
+        // },
       },
     });
     const scrollTl = gsap.timeline({
@@ -103,7 +113,8 @@ function LogoGroup() {
         x: -4,
       },
       {
-        x: -1,
+        x: -.1,
+        y:.2
       }
     );
 
@@ -113,7 +124,8 @@ function LogoGroup() {
         x: 4,
       },
       {
-        x: 1,
+        x: -.1,
+        y:.2
       }
     );
     scrollT3.fromTo(
@@ -123,7 +135,7 @@ function LogoGroup() {
         y: 3,
       },
       {
-        x: -0.8,
+        x: -0.1,
         y: 0.2,
       }
     );
@@ -134,7 +146,7 @@ function LogoGroup() {
         y: 3,
       },
       {
-        x: 0.8,
+        x: -.1,
         y: 0.2,
       }
     );
@@ -151,14 +163,30 @@ function LogoGroup() {
       }
     );
     grouptrigger.fromTo(
-      grouplogo.current,
-      { visible: true },  // Fully visible
-      { visible: false}  
+      grouplogo.current.position,
+      {
+        x: 0,
+        y: 0,
+        // z: -1,
+     
+      },
+      {
+        x: 0,
+        y: -5,
+        onUpdate: () => {
+          // console.log("Animation is in progress2");
+          // Custom event or logic you want to run during the animation
+        },
+        onComplete: () => {
+          console.log("Animation complete2");
+          // Custom event or logic you want to trigger after the animation is done
+        },
+      }
     )
   });
 
   return (
-    <group  ref={grouplogo}>
+    <group ref={grouplogo}>
       <group ref={logo1}>
         <Cylender logo={"./logo6.png"}></Cylender>
       </group>

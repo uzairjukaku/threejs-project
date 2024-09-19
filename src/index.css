@@ -21,18 +21,30 @@ canvas {
   /* position: fixed !important; */
 }
 
+.circular{
+
+  background-color: rgb(30, 29, 29);
+}
+
 .box {
   position: absolute;
   /* width: 50px;
   height: 50px; */
-
+  @apply shadow-lg bg-white;
   display: flex;
+  flex-direction: column;
+  padding: 16px;
   justify-content: center;
   align-items: center;
   color: white;
   font-weight: bold;
   border-radius: 8px;
   transform-origin: 100px 100px; /* Center of the circle */
+img{
+
+
+  object-fit: cover;
+}
 }
 
 #box1 {
@@ -45,7 +57,7 @@ canvas {
   top: 63%;
   left: -2%;
   transform: translateY(-50%) rotate(270deg);
-   /* rotate(236deg);  */
+  /* rotate(236deg);  */
   /* Rotate around bottom edge */
 }
 
@@ -55,5 +67,19 @@ canvas {
   right: -13%;
   transform: translateY(-50%) rotate(90deg);
   /* rotate(150deg); */
- /* Rotate around bottom edge */
+  /* Rotate around bottom edge */
+}
+
+
+.box-content{
+
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: black;
+
 }
