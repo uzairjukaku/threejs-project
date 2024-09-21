@@ -58,34 +58,25 @@ function Circular() {
           <div className="box w-1/4 h-[450px]" id="box1">
             <img src={Images1[0]} className="w-full h-full" alt="" srcset="" />
 
-
             <div className="box-content">
-            <h3 className="text-xl mb-2">LOREM IPSUM</h3>
-            <p className="text-2xl font-bold">$120</p>
-
-
+              <h3 className="text-xl mb-2">LOREM IPSUM</h3>
+              <p className="text-2xl font-bold">$120</p>
             </div>
           </div>
           <div className="box w-1/4 h-[450px]" id="box2">
             <img src={Images1[1]} className="w-full h-full" alt="" srcset="" />
-     
-     
             <div className="box-content">
-            <h3 className="text-xl mb-2">LOREM IPSUM</h3>
-            <p className="text-2xl font-bold">$120</p>
-
-
-            </div>     </div>
+              <h3 className="text-xl mb-2">LOREM IPSUM</h3>
+              <p className="text-2xl font-bold">$120</p>
+            </div>{" "}
+          </div>
           <div className="box w-1/4 h-[450px]" id="box3">
             <img src={Images1[2]} className="w-full h-full" alt="" srcset="" />
-      
-      
             <div className="box-content">
-            <h3 className="text-xl mb-2">LOREM IPSUM</h3>
-            <p className="text-2xl font-bold">$120</p>
-
-
-            </div>    </div>
+              <h3 className="text-xl mb-2">LOREM IPSUM</h3>
+              <p className="text-2xl font-bold">$120</p>
+            </div>{" "}
+          </div>
         </div>
       </Html>
     </group>

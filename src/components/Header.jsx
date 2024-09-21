@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import Menu from "./Menu";
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Function to toggle the menu
+  const toggleMenu = () => {
+    console.log("====================================");
+    console.log("menu");
+    console.log("====================================");
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <header className="w-full bg-transparent fixed top-0 left-0">
+    <header className="w-full bg-transparent fixed top-0 left-0 z-[10000]">
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
         <div href="/" className="flex items-center">
           <img
@@ -13,7 +24,7 @@ function Header() {
             className="rounded-full"
           />
         </div>
-        <button className="text-white focus:outline-none">
+        <button className="text-white focus:outline-none" onClick={toggleMenu}>
           <span className="sr-only">Open menu</span>
           <svg
             className="w-10 h-10"
@@ -31,6 +42,8 @@ function Header() {
           </svg>
         </button>
       </div>
+
+      {menuOpen && <Menu toggleMenu={toggleMenu} />}
     </header>
   );
 }
