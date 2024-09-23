@@ -172,7 +172,7 @@ function LogoGroup() {
       },
       {
         x: 0,
-        y: -5,
+        y: -4,
         onUpdate: () => {
           // console.log("Animation is in progress2");
           // Custom event or logic you want to run during the animation

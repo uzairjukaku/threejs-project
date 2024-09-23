@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body {
-  background-image: url(../public/BG.jpg);
+  /* background-image: url(../public/BG.jpg);
   background-repeat: repeat;
-  background-size: contain;
+  background-size: contain; */
 }
 
 .background{
