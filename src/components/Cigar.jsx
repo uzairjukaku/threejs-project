@@ -115,10 +115,14 @@ export function Cigar(props) {
       },
     });
     scrollTl
+      // Rotate can group
+      // .to(groupref.current.rotation, { y: Math.PI * 2 })
 
-    .to(ref.current.rotation, { z: Math.PI * 3 }, 0) // Rotate 3 times
-    .to(ref.current.position, { y: -1.5 }, 0) // Move down to -1.5
-    .to(ref.current.rotation, { z: 1 }, 1);
+      // Can 1 - black cherry
+      // .to(ref.current.position, { x: -0.2, y: -0.7, z: -2 }, 0)
+      .to(ref.current.rotation, { z: Math.PI * 4.5 }, 0)
+      .to(ref.current.position, { y: -1.5 }, 0.5)
+    // .to(ref.current.position, { y: -2.5}, 0)
   });
 
   return (

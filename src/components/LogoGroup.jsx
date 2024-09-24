@@ -29,9 +29,9 @@ function LogoGroup() {
     const grouptrigger = gsap.timeline({
       scrollTrigger: {
         trigger: ".section2",
-        start: "top 0%",
+        start: "bottom 80%",
         end: "bottom center",
-        // markers: true,
+        markers: true,
         scrub: 1.5,
         // onLeave: () => {
         //   console.log("Left section");
@@ -113,7 +113,7 @@ function LogoGroup() {
         x: -4,
       },
       {
-        x: -.1,
+        x: -.7,
         y:.2
       }
     );
@@ -124,7 +124,7 @@ function LogoGroup() {
         x: 4,
       },
       {
-        x: -.1,
+        x: .7,
         y:.2
       }
     );
@@ -132,10 +132,10 @@ function LogoGroup() {
       logo3.current.position,
       {
         x: -4,
-        y: 3,
+        y: 4,
       },
       {
-        x: -0.1,
+        x: -0.4,
         y: 0.2,
       }
     );
@@ -143,10 +143,10 @@ function LogoGroup() {
       logo4.current.position,
       {
         x: 4,
-        y: 3,
+        y: 4,
       },
       {
-        x: -.1,
+        x: 0.4,
         y: 0.2,
       }
     );
@@ -155,11 +155,11 @@ function LogoGroup() {
       logo5.current.position,
       {
         x: 0,
-        y: 3,
+        y: 4,
       },
       {
         x: 0,
-        y: 0.7,
+        y: 0.2,
       }
     );
     grouptrigger.fromTo(
