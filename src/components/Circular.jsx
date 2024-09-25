@@ -15,7 +15,7 @@ function Circular() {
   const circularRef = useRef(null); // Reference for the `.circular` div
 
   useEffect(() => {
-    if (circulargroup && circularRef) return true;
+    if (circulargroup.current || circularRef.current) return;
 
     const grouptrigger = gsap.timeline({
       defaults: {
@@ -97,7 +97,7 @@ function Circular() {
           rotation: -25,
         }
       );
-  });
+  }, [circulargroup, circularRef]);
 
   return (
     <group ref={circulargroup}>

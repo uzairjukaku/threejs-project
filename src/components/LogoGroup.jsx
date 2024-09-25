@@ -18,13 +18,13 @@ function LogoGroup() {
     // if (!logo1.current || !logo2.current || !logo3.current || !logo4.current)
     //   return;
 
-    const introTl = gsap.timeline();
+    // const introTl = gsap.timeline();
 
-    introTl.set(logo1.current.position, { x: -4, y: -0.5, z: 0 });
-    introTl.set(logo2.current.position, { x: 4, y: -0.5, z: 0.1 });
-    introTl.set(logo3.current.position, { x: -0.5, y: 2, z: 0.2 });
-    introTl.set(logo4.current.position, { x: 0.5, y: 2, z: 0.3 });
-    introTl.set(logo5.current.position, { x: 0, y: 2, z: 0.4 });
+    // // introTl.set(logo1.current.position, { x: -4, y: -0.5, z: 0 });
+    // // introTl.set(logo2.current.position, { x: 4, y: -0.5, z: 0.1 });
+    // // introTl.set(logo3.current.position, { x: -0.5, y: 2, z: 0.2 });
+    // // introTl.set(logo4.current.position, { x: 0.5, y: 2, z: 0.3 });
+    // // introTl.set(logo5.current.position, { x: 0, y: 2, z: 0.4 });
 
     const grouptrigger = gsap.timeline({
       scrollTrigger: {
@@ -55,7 +55,7 @@ function LogoGroup() {
       },
       scrollTrigger: {
         trigger: ".section2",
-        start: "top bottom",
+        start: "top 80%",
         end: "bottom top",
 
         scrub: 1.5,
@@ -67,7 +67,7 @@ function LogoGroup() {
       },
       scrollTrigger: {
         trigger: ".section2",
-        start: "top bottom",
+        start: "top 80%",
         end: "bottom top",
         scrub: 1.5,
       },
@@ -78,7 +78,7 @@ function LogoGroup() {
       },
       scrollTrigger: {
         trigger: ".section2",
-        start: "top bottom",
+        start: "top 80%",
         end: "bottom top",
 
         scrub: 1.5,
@@ -90,7 +90,7 @@ function LogoGroup() {
       },
       scrollTrigger: {
         trigger: ".section2",
-        start: "top bottom",
+        start: "top 80%",
         end: "bottom top",
 
         scrub: 1.5,
@@ -102,7 +102,7 @@ function LogoGroup() {
       },
       scrollTrigger: {
         trigger: ".section2",
-        start: "top bottom",
+        start: "top 80%",
         end: "bottom top",
 
         scrub: 1.5,
@@ -113,6 +113,7 @@ function LogoGroup() {
       logo1.current.position,
       {
         x: -5,
+        y: 0,
       },
       {
         x: -1,
