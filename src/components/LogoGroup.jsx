@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Cylender from "./Cylender";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -14,7 +14,7 @@ function LogoGroup() {
   const grouplogo = useRef();
   const [isVisible, setIsVisible] = useState(true);
 
-  useGSAP(() => {
+  useEffect(() => {
     // if (!logo1.current || !logo2.current || !logo3.current || !logo4.current)
     //   return;
 
@@ -137,7 +137,7 @@ function LogoGroup() {
         y: 4,
       },
       {
-        x: -.7,
+        x: -0.7,
         y: 0.8,
       }
     );
@@ -149,7 +149,7 @@ function LogoGroup() {
       },
       {
         x: 0.7,
-        y: .8,
+        y: 0.8,
       }
     );
 
@@ -188,18 +188,23 @@ function LogoGroup() {
       )
       .to(grouplogo.current.position, {
         x: 0,
-        y: -.5,
+        y: -0.5,
         // z: -1,
-      }).fromTo(grouplogo.current.position, {
-        x: 0,
-        y: -.5,
-        // z: -1,
-      },{
-        x: 0,
-        y: -4,
-        // z: -1,
-      }
-    ,2)
+      })
+      .fromTo(
+        grouplogo.current.position,
+        {
+          x: 0,
+          y: -0.5,
+          // z: -1,
+        },
+        {
+          x: 0,
+          y: -4,
+          // z: -1,
+        },
+        2
+      );
   });
 
   return (

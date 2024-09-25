@@ -15,6 +15,8 @@ function Circular() {
   const circularRef = useRef(null); // Reference for the `.circular` div
 
   useEffect(() => {
+    if (circulargroup && circularRef) return true;
+
     const grouptrigger = gsap.timeline({
       defaults: {
         duration: 3,
