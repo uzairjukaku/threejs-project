@@ -8,10 +8,8 @@ body {
   background-size: contain; */
 }
 
-.background{
-
+.background {
   background-image: url(../public/BG.jpg);
-
 }
 canvas {
   z-index: 1000 !important;
@@ -27,15 +25,17 @@ canvas {
   /* position: fixed !important; */
 }
 
-.circular{
+.circular {
+}
 
+.innerCircle {
   background-color: rgb(30, 29, 29);
+  transform: scale(2) !important;
 }
 
 .box {
   position: absolute;
-  /* width: 50px;
-  height: 50px; */
+
   @apply shadow-lg bg-white;
   display: flex;
   flex-direction: column;
@@ -45,40 +45,31 @@ canvas {
   color: white;
   font-weight: bold;
   border-radius: 8px;
-  transform-origin: 100px 100px; /* Center of the circle */
-img{
-
-
-  object-fit: cover;
-}
+  /* transform-origin: 100px 100px; */
+  img {
+    object-fit: cover;
+  }
 }
 
 #box1 {
-  top: -25px; /* Center above the circle */
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 100px;
+  left: 100%;
+  /* transform: rotateX(0deg); */
 }
 
 #box2 {
-  top: 63%;
-  left: -2%;
-  transform: translateY(-50%) rotate(270deg);
-  /* rotate(236deg);  */
-  /* Rotate around bottom edge */
+  bottom: 100px;
+  left: 100%;
+  /* transform: translateY(-50%) rotate(270deg); */
 }
 
-/* Box 3 - Right side */
 #box3 {
-  top: 53%;
-  right: -13%;
-  transform: translateY(-50%) rotate(90deg);
-  /* rotate(150deg); */
-  /* Rotate around bottom edge */
+  bottom: 100px;
+  left: 100%;
+  /* transform: translateY(-50%) rotate(90deg); */
 }
 
-
-.box-content{
-
+.box-content {
   display: flex;
   flex-direction: column;
   padding: 16px;
@@ -87,5 +78,4 @@ img{
   justify-content: center;
   width: 100%;
   color: black;
-
 }

@@ -29,9 +29,11 @@ function LogoGroup() {
     const grouptrigger = gsap.timeline({
       scrollTrigger: {
         trigger: ".section2",
-        start: "bottom 80%",
-        end: "bottom center",
-        markers: true,
+
+        endTrigger: ".section4",
+        start: "bottom 100%",
+        end: "bottom top",
+        // markers: true,
         scrub: 1.5,
         // onLeave: () => {
         //   console.log("Left section");
@@ -110,22 +112,22 @@ function LogoGroup() {
     scrollTl.fromTo(
       logo1.current.position,
       {
-        x: -4,
+        x: -5,
       },
       {
-        x: -.7,
-        y:.2
+        x: -1,
+        y: 0.2,
       }
     );
 
     scrollT2.fromTo(
       logo2.current.position,
       {
-        x: 4,
+        x: 5,
       },
       {
-        x: .7,
-        y:.2
+        x: 1,
+        y: 0.2,
       }
     );
     scrollT3.fromTo(
@@ -135,8 +137,8 @@ function LogoGroup() {
         y: 4,
       },
       {
-        x: -0.4,
-        y: 0.2,
+        x: -.7,
+        y: 0.8,
       }
     );
     scrollT4.fromTo(
@@ -146,8 +148,8 @@ function LogoGroup() {
         y: 4,
       },
       {
-        x: 0.4,
-        y: 0.2,
+        x: 0.7,
+        y: .8,
       }
     );
 
@@ -159,30 +161,45 @@ function LogoGroup() {
       },
       {
         x: 0,
-        y: 0.2,
+        y: 1,
       }
     );
-    grouptrigger.fromTo(
-      grouplogo.current.position,
-      {
+    grouptrigger
+      .fromTo(
+        grouplogo.current.position,
+        {
+          x: 0,
+          y: 0,
+          // z: -1,
+        },
+        {
+          x: 0,
+          y: 0,
+          onUpdate: () => {
+            // console.log("Animation is in progress2");
+            // Custom event or logic you want to run during the animation
+          },
+          onComplete: () => {
+            console.log("Animation complete2");
+            // Custom event or logic you want to trigger after the animation is done
+          },
+        },
+        0.1
+      )
+      .to(grouplogo.current.position, {
         x: 0,
-        y: 0,
+        y: -.5,
         // z: -1,
-     
-      },
-      {
+      }).fromTo(grouplogo.current.position, {
+        x: 0,
+        y: -.5,
+        // z: -1,
+      },{
         x: 0,
         y: -4,
-        onUpdate: () => {
-          // console.log("Animation is in progress2");
-          // Custom event or logic you want to run during the animation
-        },
-        onComplete: () => {
-          console.log("Animation complete2");
-          // Custom event or logic you want to trigger after the animation is done
-        },
+        // z: -1,
       }
-    )
+    ,2)
   });
 
   return (
