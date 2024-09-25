@@ -35,7 +35,7 @@ function Circular() {
         trigger: ".section5",
         start: "top top",
         end: "bottom top",
-        markers: true,
+        // markers: true,
         scrub: 1.5,
       },
     });
@@ -95,7 +95,7 @@ function Circular() {
           rotation: -25,
         }
       );
-  },[]);
+  });
 
   return (
     <group ref={circulargroup}>
