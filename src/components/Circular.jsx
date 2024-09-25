@@ -17,7 +17,7 @@ function Circular() {
   const box2 = useRef(null); // Reference for the `.circular` div
   const box3 = useRef(null); // Reference for the `.circular` div
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // if (circulargroup.current || circularRef.current) return;
 
     const grouptrigger = gsap.timeline({
