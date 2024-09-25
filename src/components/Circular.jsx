@@ -11,11 +11,14 @@ const Images1 = [
   "/Images/Featured Images/3.webp",
 ];
 function Circular() {
-  const circulargroup = useRef();
+  const circulargroup = useRef(null);
   const circularRef = useRef(null); // Reference for the `.circular` div
+  const box1 = useRef(null); // Reference for the `.circular` div
+  const box2 = useRef(null); // Reference for the `.circular` div
+  const box3 = useRef(null); // Reference for the `.circular` div
 
   useEffect(() => {
-    if (circulargroup.current || circularRef.current) return;
+    // if (circulargroup.current || circularRef.current) return;
 
     const grouptrigger = gsap.timeline({
       defaults: {
@@ -107,7 +110,7 @@ function Circular() {
           ref={circularRef} // Attach the ref to this element
         >
           <div className="innerCircle z-0 h-[100vh] w-screen  absolute top-[500px] left-0  rounded-tl-full rounded-tr-full"></div>
-          <div className="box w-1/4 h-[450px]" id="box1">
+          <div className="box w-1/4 h-[450px]" id="box1" ref={box1}>
             <img src={Images1[0]} className="w-full h-full" alt="" srcset="" />
 
             <div className="box-content">
@@ -115,14 +118,14 @@ function Circular() {
               <p className="text-2xl font-bold">$120</p>
             </div>
           </div>
-          <div className="box w-1/4 h-[450px]" id="box2">
+          <div className="box w-1/4 h-[450px]" id="box2" ref={box2}>
             <img src={Images1[1]} className="w-full h-full" alt="" srcset="" />
             <div className="box-content">
               <h3 className="text-xl mb-2">LOREM IPSUM 2</h3>
               <p className="text-2xl font-bold">$120</p>
             </div>{" "}
           </div>
-          <div className="box w-1/4 h-[450px]" id="box3">
+          <div className="box w-1/4 h-[450px]" id="box3" ref={box3}>
             <img src={Images1[2]} className="w-full h-full" alt="" srcset="" />
             <div className="box-content">
               <h3 className="text-xl mb-2">LOREM IPSUM 3</h3>
