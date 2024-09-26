@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Cylender from "./Cylender";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -14,17 +14,17 @@ function LogoGroup() {
   const grouplogo = useRef();
   const [isVisible, setIsVisible] = useState(true);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // if (!logo1.current || !logo2.current || !logo3.current || !logo4.current)
     //   return;
 
-    // const introTl = gsap.timeline();
+    const introTl = gsap.timeline();
 
-    // // introTl.set(logo1.current.position, { x: -4, y: -0.5, z: 0 });
-    // // introTl.set(logo2.current.position, { x: 4, y: -0.5, z: 0.1 });
-    // // introTl.set(logo3.current.position, { x: -0.5, y: 2, z: 0.2 });
-    // // introTl.set(logo4.current.position, { x: 0.5, y: 2, z: 0.3 });
-    // // introTl.set(logo5.current.position, { x: 0, y: 2, z: 0.4 });
+    // introTl.set(logo1.current.position, { x: -5, y: 0, z: 0 });
+    // introTl.set(logo2.current.position, { x: 4, y: -0.5, z: 0.1 });
+    // introTl.set(logo3.current.position, { x: -0.5, y: 2, z: 0.2 });
+    // introTl.set(logo4.current.position, { x: 0.5, y: 2, z: 0.3 });
+    // introTl.set(logo5.current.position, { x: 0, y: 2, z: 0.4 });
 
     const grouptrigger = gsap.timeline({
       scrollTrigger: {
@@ -165,33 +165,27 @@ function LogoGroup() {
         y: 1,
       }
     );
+
     grouptrigger
-      .fromTo(
-        grouplogo.current.position,
-        {
-          x: 0,
-          y: 0,
-          // z: -1,
-        },
-        {
-          x: 0,
-          y: 0,
-          onUpdate: () => {
-            // console.log("Animation is in progress2");
-            // Custom event or logic you want to run during the animation
-          },
-          onComplete: () => {
-            console.log("Animation complete2");
-            // Custom event or logic you want to trigger after the animation is done
-          },
-        },
-        0.1
-      )
-      .to(grouplogo.current.position, {
-        x: 0,
-        y: -0.5,
-        // z: -1,
-      })
+      // .fromTo(
+      //   grouplogo.current.position,
+      //   {
+      //     x: 0,
+      //     y: 0,
+      //     // z: -1,
+      //   },
+      //   {
+      //     x: 0,
+      //     y: 0,
+   
+      //   },
+      //   0.1
+      // )
+      // .to(grouplogo.current.position, {
+      //   x: 0,
+      //   y: -0.5,
+      //   // z: -1,
+      // })
       .fromTo(
         grouplogo.current.position,
         {

@@ -15,7 +15,7 @@ function Section2({ type }) {
     <div className=" text-white h-max my-10">
       <main className="container mx-auto px-4">
         <div className="relative py-12">
-          <img src="" alt="" srcset="" className="mx-auto" />
+          <img src="" alt="" className="mx-auto" />
         </div>
 
         <h2 className="text-4xl font-bold text-center mb-8">
@@ -26,14 +26,14 @@ function Section2({ type }) {
           {type === "FEATURED"
             ? Images1.map((item) => (
                 <div key={item} className="text-center">
-                  <img src={item} alt="" srcset="" className="w-full mb-4" />
+                  <img src={item} alt="" className="w-full mb-4" />
                   <h3 className="text-xl mb-2">LOREM IPSUM</h3>
                   <p className="text-2xl font-bold">$120</p>
                 </div>
               ))
             : Images2.map((item) => (
                 <div key={item} className="text-center">
-                  <img src={item} alt="" srcset="" className="w-full mb-4" />
+                  <img src={item} alt="" className="w-full mb-4" />
                   <h3 className="text-xl mb-2">LOREM IPSUM</h3>
                   <p className="text-2xl font-bold">$120</p>
                 </div>

@@ -54,7 +54,7 @@ const App = () => {
       <div className="background !-z-[1000] absolute top-0 left-0 w-full h-screen">
 
       </div>
-      <img src="/Logo.png" className="!-z-[1000] absolute top-1/2 left-1/2 object-contain h-96 -translate-x-1/2 -translate-y-1/2 " alt="" srcset="" />
+      <img src="/Logo.png" className="!-z-[1000] absolute top-1/2 left-1/2 object-contain h-96 -translate-x-1/2 -translate-y-1/2 " alt=""  />
         <CanvasContainer></CanvasContainer>
       </section>
       <section className="section2" style={{ height: "100vh"}}></section>
