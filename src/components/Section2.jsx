@@ -12,7 +12,7 @@ const Images2 = [
 ];
 function Section2({ type }) {
   return (
-    <div className=" text-white h-max my-10">
+    <div className="bg-black  text-white h-max my-10">
       <main className="container mx-auto px-4">
         <div className="relative py-12">
           <img src="" alt="" className="mx-auto" />

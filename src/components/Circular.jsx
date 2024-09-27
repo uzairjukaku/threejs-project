@@ -1,7 +1,8 @@
 import React, { useRef, useLayoutEffect, Suspense } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Html } from "@react-three/drei";
+import { Center, Html } from "@react-three/drei";
+import { useThree } from "@react-three/fiber";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,10 +12,10 @@ const Images1 = [
   "/Images/Featured Images/3.webp",
 ];
 
-function Circular() {
+function Circular({ margin = 0.5 }) {
   const circulargroup = useRef();
-  const circularRef = useRef(); 
-  const box1 = useRef(); 
+  const circularRef = useRef();
+  const box1 = useRef();
   const box2 = useRef();
   const box3 = useRef();
 
@@ -66,7 +67,7 @@ function Circular() {
         },
         {
           x: 0,
-          y: 1.3,
+          y: .05,
         }
       );
 
@@ -74,8 +75,9 @@ function Circular() {
       const cardgroup = gsap.timeline({
         scrollTrigger: {
           trigger: ".section5",
-          start: "top top",
+          start: "center top",
           end: "bottom top",
+          // markers:true,
           scrub: 1.5,
         },
       });
@@ -120,31 +122,32 @@ function Circular() {
       ScrollTrigger.refresh();
     }, 100); // Small delay to ensure DOM elements are ready
   }, []); // Dependency array to ensure it runs only once
-
+  const { width, height } = useThree((state) => state.viewport);
   return (
-    <group ref={circulargroup}>
+
+    <group ref={circulargroup} position={[0,-5,0]}>
       <Suspense fallback={<span>Loading...</span>}>
-        <Html position={[-2.69, 0, 0]} occlude zIndexRange={[-100, 0]}>
+        <Html occlude zIndexRange={[-100, 0]}  position={[-width / 2 , height / 2 - margin, 0]}>
           <div
             className="circular z-0 h-[100vh] w-screen overflow-visible  relative "
-            ref={circularRef} 
+            ref={circularRef}
           >
-            <div className="innerCircle z-0 h-[100vh] w-screen  absolute top-[500px] left-0  rounded-tl-full rounded-tr-full"></div>
-            <div className="box w-1/4 h-[450px]" id="box1" ref={box1}>
+            <div className="innerCircle z-0 h-[100vh] w-screen   rounded-tl-full rounded-tr-full"></div>
+            <div className="box md:w-1/4 w-5/6  h-[450px]" id="box1" ref={box1}>
               <img src={Images1[0]} className="w-full h-full" alt="" />
               <div className="box-content">
                 <h3 className="text-xl mb-2">LOREM IPSUM 1</h3>
                 <p className="text-2xl font-bold">$120</p>
               </div>
             </div>
-            <div className="box w-1/4 h-[450px]" id="box2" ref={box2}>
+            <div className="box md:w-1/4 w-5/6  h-[450px]" id="box2" ref={box2}>
               <img src={Images1[1]} className="w-full h-full" alt="" />
               <div className="box-content">
                 <h3 className="text-xl mb-2">LOREM IPSUM 2</h3>
                 <p className="text-2xl font-bold">$120</p>
               </div>
             </div>
-            <div className="box w-1/4 h-[450px]" id="box3" ref={box3}>
+            <div className="box md:w-1/4 w-5/6  h-[450px]" id="box3" ref={box3}>
               <img src={Images1[2]} className="w-full h-full" alt="" />
               <div className="box-content">
                 <h3 className="text-xl mb-2">LOREM IPSUM 3</h3>
@@ -155,6 +158,7 @@ function Circular() {
         </Html>
       </Suspense>
     </group>
+
   );
 }
 

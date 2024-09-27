@@ -121,8 +121,23 @@ export function Cigar(props) {
       // Can 1 - black cherry
       // .to(ref.current.position, { x: -0.2, y: -0.7, z: -2 }, 0)
       .to(ref.current.rotation, { z: Math.PI * 4.5 }, 0)
-      .to(ref.current.position, { y: -1.5 }, 0.5)
+      .to(ref.current.position, { y: -1.5 }, 0.5);
     // .to(ref.current.position, { y: -2.5}, 0)
+
+    const scrollT2 = gsap.timeline({
+      defaults: {
+        duration: 2,
+      },
+      scrollTrigger: {
+        trigger: ".section6",
+        start: "top bottom",
+        end: "bottom top",
+        // markers: true,
+        scrub: 2,
+      },
+    });
+
+    scrollT2.to(groupref.current.rotation, { y: Math.PI * 4.5 });
   });
 
   return (
