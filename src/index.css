@@ -32,8 +32,8 @@ canvas {
 
 .innerCircle {
   background-color: rgb(30, 29, 29);
-  /* transform: translateX(-50%) !important; */
-  /* @apply absolute left-0 top-0 ; */
+  transform: scale(2) !important;
+  @apply absolute top-[400px] ;
 
   
 }
