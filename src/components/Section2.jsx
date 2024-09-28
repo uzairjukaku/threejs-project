@@ -25,14 +25,14 @@ function Section2({ type }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {type === "FEATURED"
             ? Images1.map((item) => (
-                <div key={item} className="text-center">
+                <div key={item} className="card text-center">
                   <img src={item} alt="" className="w-full mb-4" />
                   <h3 className="text-xl mb-2">LOREM IPSUM</h3>
                   <p className="text-2xl font-bold">$120</p>
                 </div>
               ))
             : Images2.map((item) => (
-                <div key={item} className="text-center">
+                <div key={item} className="card text-center">
                   <img src={item} alt="" className="w-full mb-4" />
                   <h3 className="text-xl mb-2">LOREM IPSUM</h3>
                   <p className="text-2xl font-bold">$120</p>

@@ -91,7 +91,7 @@ function Circular({ margin = 0.5 }) {
             rotation: 45,
           },
           {
-            x: "-130vw",
+            x: "-95vw",
             rotation: -25,
           }
         )
@@ -99,22 +99,24 @@ function Circular({ margin = 0.5 }) {
           box2.current,
           {
             x: "100vw",
+          
             rotation: 45,
           },
           {
-            x: "-130vw",
-            rotation: -25,
+            x: "-63vw",
+         
+            rotation: 0,
           }
         )
         .fromTo(
           box3.current,
           {
             x: "100vw",
-            rotation: 45,
+            rotation: -45,
           },
           {
-            x: "-130vw",
-            rotation: -25,
+            x: "-31vw",
+            rotation: 25,
           }
         );
 
@@ -132,23 +134,23 @@ function Circular({ margin = 0.5 }) {
             className="circular z-0 h-[100vh] w-screen overflow-visible  relative "
             ref={circularRef}
           >
-            <div className="innerCircle z-0 h-[100vh] w-screen   rounded-tl-full rounded-tr-full"></div>
-            <div className="box md:w-1/4 w-5/6  h-[450px]" id="box1" ref={box1}>
-              <img src={Images1[0]} className="w-full h-full" alt="" />
+            <div className="innerCircle z-0 h-[100vh] w-screen    rounded-tl-full rounded-tr-full"></div>
+            <div className="box md:w-1/4 w-5/6  h-[350px]" id="box1" ref={box1}>
+              <img src={Images1[0]} className="w-full h-full object-cover" alt="" />
               <div className="box-content">
                 <h3 className="text-xl mb-2">LOREM IPSUM 1</h3>
                 <p className="text-2xl font-bold">$120</p>
               </div>
             </div>
-            <div className="box md:w-1/4 w-5/6  h-[450px]" id="box2" ref={box2}>
-              <img src={Images1[1]} className="w-full h-full" alt="" />
+            <div className="box md:w-1/4 w-5/6  h-[350px]" id="box2" ref={box2}>
+              <img src={Images1[1]} className="w-full h-full object-cover" alt="" />
               <div className="box-content">
                 <h3 className="text-xl mb-2">LOREM IPSUM 2</h3>
                 <p className="text-2xl font-bold">$120</p>
               </div>
             </div>
-            <div className="box md:w-1/4 w-5/6  h-[450px]" id="box3" ref={box3}>
-              <img src={Images1[2]} className="w-full h-full" alt="" />
+            <div className="box md:w-1/4 w-5/6  h-[350px]" id="box3" ref={box3}>
+              <img src={Images1[2]} className="w-full h-full object-cover" alt="" />
               <div className="box-content">
                 <h3 className="text-xl mb-2">LOREM IPSUM 3</h3>
                 <p className="text-2xl font-bold">$120</p>

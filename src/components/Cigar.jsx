@@ -99,8 +99,9 @@ export function Cigar(props) {
     });
 
     introTl
-      .from(groupref.current.position, { y: -5, x: 1 }, 0)
-      .from(groupref.current.rotation, { z: 3 }, 0);
+      .from(groupref.current.position, { y: -5, x: 0 }, 0)
+      .from(groupref.current.rotation, { z: 3 }, 0)
+      .to(groupref.current.position, { x: 0 });
 
     const scrollTl = gsap.timeline({
       defaults: {
@@ -120,8 +121,12 @@ export function Cigar(props) {
 
       // Can 1 - black cherry
       // .to(ref.current.position, { x: -0.2, y: -0.7, z: -2 }, 0)
-      .to(ref.current.rotation, { z: Math.PI * 4.5 }, 0)
-      .to(ref.current.position, { y: -1.5 }, 0.5);
+      .to(ref.current.rotation, { z: Math.PI * 2.5 }, 0)
+      .to(ref.current.position, { y: -1 }, 0.5)
+      .to(".brandlogo", {
+        opacity: 0,
+      })
+      .to(ref.current.position, { y: -2 });
     // .to(ref.current.position, { y: -2.5}, 0)
 
     const scrollT2 = gsap.timeline({

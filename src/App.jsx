@@ -48,32 +48,27 @@ const App = () => {
 
   return (
     <div>
-
       <Header></Header>
       <section className="section1 relative" style={{ height: "100vh" }}>
-      <div className="background !-z-[1000] absolute top-0 left-0 w-full h-screen">
-
-      </div>
-      <img src="/Logo.png" className="!-z-[1000] absolute top-1/2 left-1/2 object-contain h-96 -translate-x-1/2 -translate-y-1/2 " alt=""  />
+        <div className="background !-z-[1000] absolute top-0 left-0 w-full h-screen"></div>
+        <img
+          src="/Logo.png"
+          className="brandlogo !-z-[1000] absolute top-1/2 left-1/2 object-contain h-96 -translate-x-1/2 -translate-y-1/2 "
+          alt=""
+        />
         <CanvasContainer></CanvasContainer>
       </section>
-      <section className="section2" style={{ height: "100vh"}}></section>
+      <section className="section2" style={{ height: "100vh" }}></section>
       <section className="section3  " style={{}}>
         {/* <Section2 type={'FEATURED'}></Section2> */}
 
         {/* <Circular/> */}
       </section>
-      <section className="section4">
-      
-      </section>
-      <section className="section5"  style={{ height: "100vh" }}>
-     
-      </section>
-      <section className="section6"  style={{ height: "100vh" }}>
-    
-      </section>
+      <section className="section4"></section>
+      <section className="section5" style={{ height: "100vh" }}></section>
+      <section className="section6" style={{ height: "100vh" }}></section>
       <section className="section7">
-      <Section2 type={'BEST SELLING'}></Section2>
+        <Section2 type={"BEST SELLING"}></Section2>
       </section>
       <section className="section7">
         <Section4></Section4>

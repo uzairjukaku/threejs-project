@@ -33,23 +33,21 @@ canvas {
 .innerCircle {
   background-color: rgb(30, 29, 29);
   transform: scale(2) !important;
-  @apply absolute top-[400px] ;
-
-  
+  @apply absolute top-[400px];
 }
 
 .box {
   position: absolute;
 
-  @apply shadow-lg bg-white;
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  justify-content: center;
-  align-items: center;
+  @apply bg-white grid grid-rows-[250px_100px] overflow-hidden shadow-md rounded-md;
+  /* display: flex; */
+  /* flex-direction: column; */
+
+  /* justify-content: center;
+  align-items: center; */
   color: white;
   font-weight: bold;
-  border-radius: 8px;
+
   /* transform-origin: 100px 100px; */
   img {
     object-fit: cover;
@@ -57,19 +55,20 @@ canvas {
 }
 
 #box1 {
-  bottom: 100px;
+  top: 100px;
   left: 100%;
   /* transform: rotateX(0deg); */
 }
 
 #box2 {
-  bottom: 100px;
+  top: 0px;
+
   left: 100%;
   /* transform: translateY(-50%) rotate(270deg); */
 }
 
 #box3 {
-  bottom: 100px;
+  top: 100px;
   left: 100%;
   /* transform: translateY(-50%) rotate(90deg); */
 }
@@ -83,4 +82,8 @@ canvas {
   justify-content: center;
   width: 100%;
   color: black;
+}
+
+.card {
+  @apply hover:scale-[1.1] transition-all duration-1000;
 }
